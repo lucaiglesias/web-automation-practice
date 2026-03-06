@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FirstTest {
@@ -21,5 +23,23 @@ public class FirstTest {
         // 4. (Opcional) Fecha o navegador depois de 3 segundos para teste
         // 4. (Optional) Close it after 3 seconds
         driver.quit();
+    }
+
+    @Test
+    public void testLogin(){
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/login");
+
+        // 1. Encontrar o campo de usuário e digitar.
+        // 1. Find the user's textbox using the id and type the login
+        driver.findElement(By.id("username")).sendKeys("tomsmith");
+
+        // 2. Encontrar o campo de senha e digitar
+        // 2. Find the password's textbox using the if and type the password.
+        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+
+        // 3. Clicar no botão de Login
+        // 3. Click on Login's button.
+        driver.findElement(By.id("login")).findElement(By.tagName("button")).click();
     }
 }
