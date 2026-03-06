@@ -1,8 +1,9 @@
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+
 
 public class FirstTest {
 
@@ -26,9 +27,10 @@ public class FirstTest {
     }
 
     @Test
-    public void testLogin(){
+    public void testLogin() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/login");
+        driver.manage().window().maximize();
 
         // 1. Encontrar o campo de usuário e digitar.
         // 1. Find the user's textbox using the id and type the login
@@ -41,5 +43,11 @@ public class FirstTest {
         // 3. Clicar no botão de Login
         // 3. Click on Login's button.
         driver.findElement(By.id("login")).findElement(By.tagName("button")).click();
+
+        // 4. Pausa de 5sec e fecha a janela
+        // 4. Pause of 5secs and close browser
+        Thread.sleep(5000);
+        driver.quit();
+
     }
 }
