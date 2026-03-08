@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -44,8 +45,16 @@ public class FirstTest {
         // 3. Click on Login's button.
         driver.findElement(By.id("login")).findElement(By.tagName("button")).click();
 
-        // 4. Pausa de 5sec e fecha a janela
-        // 4. Pause of 5secs and close browser
+        // 4. Validação do teste usando JUnit
+        // 4. Check if test passed using JUnit
+        String message = driver.findElement(By.id("flash")).getText();
+        //Test Pass
+        Assertions.assertTrue(message.contains("You logged into a secure area!"),"Test Failed");
+        //Test Fail
+        //Assertions.assertTrue(message.contains("no"),"Test Failed");
+
+        // 5. Pausa de 5sec e fecha a janela
+        // 5. Pause of 5secs and close browser
         Thread.sleep(5000);
         driver.quit();
 
