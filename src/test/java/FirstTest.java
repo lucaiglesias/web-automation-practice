@@ -26,26 +26,37 @@ public class FirstTest {
 
     // Test
     @Test
-    public void testLogin(){
+    public void testValidLogin(){
 
         // 1. Encontrar o campo de usuário e digitar.
         // 1. Find the user's textbox using the id and type the login
-        driver.findElement(By.id("username")).sendKeys("tomsmith");
+        enterUser("tomsmith");
 
         // 2. Encontrar o campo de senha e digitar
         // 2. Find the password's textbox using the if and type the password.
-        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+        enterPassword("SuperSecretPassword!");
 
         // 3. Clicar no botão de Login
         // 3. Click at the login's button.
-        driver.findElement(By.id("login")).findElement(By.tagName("button")).click();
+        clickLoginButton();
 
         // 4. Validação do teste usando JUnit
-        // 4. Check if test passed using JUnit
-        String message = driver.findElement(By.id("flash")).getText();
-        //Test Pass
-        Assertions.assertTrue(message.contains("You logged into a secure area!"),"Test Failed");
+        // 4. Using JUnit to check test
+        validateMessage("You logged into a secure area!");
 
+    }
+
+    @Test
+    public void testInvalidLogin(){
+
+        // 1. Call method "enterUser" and type the incorrect username
+        enterUser("incorrectUser");
+
+        // 2. Click at the login's button
+        clickLoginButton();
+
+        // 3. Using JUnit to check test
+        validateMessage("Your username is invalid!");
     }
 
     // Close browser after each test
@@ -57,5 +68,25 @@ public class FirstTest {
         driver.quit();
     }
 
+    //Method to find the User's textbox and enter text
+    public void enterUser(String user){
+        driver.findElement(By.id("username")).sendKeys(user);
+    }
+
+    //Method to find the Password's textbox and enter text
+    public void enterPassword(String password){
+        driver.findElement(By.id("password")).sendKeys(password);
+    }
+
+    //Method to find the Login's button and click it
+    public void clickLoginButton(){
+        driver.findElement(By.id("login")).findElement(By.tagName("button")).click();
+    }
+
+    //Method to validate message
+    public void validateMessage(String header){
+        String message = driver.findElement(By.id("flash")).getText();
+        Assertions.assertTrue(message.contains(header), "Test Failed");
+    }
 
 }
