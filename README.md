@@ -1,4 +1,4 @@
-# Web Automation Practice - Heroku Login
+# Web Automation Practice
 This project demonstrates a professional automated testing suite for a web login flow, focusing on code reusability, clean architecture, and automated assertions.
 
 ## Technologies Used
@@ -7,12 +7,17 @@ This project demonstrates a professional automated testing suite for a web login
 * **JUnit 5** (Test framework and Lifecycle hooks)
 * **Maven** (Dependency management)
 
-## Project Features & Technical Highlights
+## Project 1: Web Login (Heroku Login) - Features & Technical Highlights
 * **Automated E2E Flow**: Covers both positive (successful login) and negative (invalid credentials) scenarios.
 * **Test Lifecycle Management**: Uses @BeforeEach and @AfterEach hooks to manage browser sessions efficiently, ensuring test independence.
 * **Refactored for Reusability**: Implemented Helper Methods (enterUser, clickLoginButton, etc.) to reduce code duplication and follow DRY (Don't Repeat Yourself) principles.
 * **Dynamic Assertions**: Automated validation of success and error messages using JUnit Assertions.
 
+## Project 2: E-Commerce End-to-End Flow (SauceDemo)
+* **Full Checkout Cycle**: Automated the entire journey from login to "Thank You" confirmation page.
+* **Dynamic Data Handling**: Implemented List<WebElement> and for-each loops to interact with a dynamic product catalog, ensuring tests remain robust even if product order changes.
+* **Advanced Browser Configuration**: Utilized ChromeOptions and HashMap to disable browser-level alerts (leak detection, password saving) that can obstruct automation.
+* **Defensive Programming**: Added logic to verify cart contents and presence of elements before interaction to prevent "flaky" tests.
 
 # Version Française
 Ce projet présente une suite de tests automatisés professionnels pour un flux de connexion web, en mettant l'accent sur la **réutilisabilité du code**, l'**architecture propre** et les **assertions automatisées**.
@@ -23,7 +28,13 @@ Ce projet présente une suite de tests automatisés professionnels pour un flux 
 * **JUnit 5** (Cadre de test et hooks de cycle de vie)
 * **Maven** (Gestion das dépendances)
 
-## Points Saillants Techniques
+## Projet 1 : Connexion Web (Heroku Login) - Points Saillants Techniques
 * **Flux E2E Automatisé :** Couvre les scénarios positifs (connexion réussie) et négatifs (identifiants invalides).
 * **Gestion du Cycle de Vie :** Utilisation des annotations `@BeforeEach` et `@AfterEach` pour gérer les sessions de navigation de manière isolée.
 * **Refactorisation pour la Réutilisabilité :** Implémentation de méthodes auxiliaires (`enterUser`, `clickLoginButton`, etc.) suivant les principes **DRY (Don't Repeat Yourself)**.
+
+## Projet 2 : Flux E2E de Commerce Électronique (SauceDemo)
+* **Cycle d'achat complet**: Automatisation du parcours complet, de la connexion à la page de confirmation de commande.
+* **Gestion dynamique des données**: Utilisation de List<WebElement> et de boucles for-each pour interagir avec un catalogue de produits dynamique.
+* **Configuration avancée du navigateur**: Utilisation de ChromeOptions pour désactiver les alertes de sécurité du navigateur qui pourraient bloquer l'automatisation.
+* **Assertions robustes**: Validation de la correspondance entre les articles sélectionnés et les articles présents dans le panier.

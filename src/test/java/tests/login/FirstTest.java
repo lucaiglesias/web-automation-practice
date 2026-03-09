@@ -1,3 +1,5 @@
+package tests.login;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -62,9 +64,9 @@ public class FirstTest {
     // Close browser after each test
     @AfterEach
     public void tearDown() throws InterruptedException {
-        // 5. Pausa de 5sec e fecha a janela
-        // 5. Pause of 5secs and close browser
-        Thread.sleep(5000);
+        // 5. Pausa de 3 segs e fecha a janela
+        // 5. Pause of 3 secs and close browser
+        Thread.sleep(3000);
         driver.quit();
     }
 
