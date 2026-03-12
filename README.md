@@ -29,6 +29,11 @@ This project demonstrates a professional automated testing suite for a web login
 * **Complex Elements**: Mastery of non-standard web components like **iFrames** (nested navigation), **JavaScript Alerts** (system pop-ups), and **Dropdowns** using the Selenium `Select` class.
 * **Context Switching**: Demonstrated ability to manage WebDriver focus between different DOM layers and system alerts.
 
+## Project 5: Advanced API Integration & Security
+* **Dynamic Token Management**: Automated the extraction of Bearer Tokens/Cookies from login responses to authorize subsequent restricted requests (DELETE/PUT).
+* **Data Resilience**: Implemented dynamic ID retrieval using **JsonPath**, ensuring tests remain stable by discovering available resources in real-time instead of relying on hardcoded values.
+* **Object Mapping**: Leveraged **Jackson Databind** for seamless Java-to-JSON serialization, maintaining clean and maintainable test data structures.
+
 
 # Version Française
 Ce projet présente une suite de tests automatisés professionnels pour un flux de connexion web, en mettant l'accent sur la **réutilisabilité du code**, l'**architecture propre** et les **assertions automatisées**.
@@ -59,3 +64,8 @@ Ce projet présente une suite de tests automatisés professionnels pour un flux 
 ## Projet 4: Éléments Complexes (Heroku Dropdown menus; JavaScript Alerts; iFrames)
 * **Éléments Complexes** : Maîtrise des composants web avancés tels que les **iFrames** (navigation imbriquée), les alertes **JavaScript** et les menus **Dropdown**.
 * **Changement de Contexte** : Capacité démontrée à gérer le focus du WebDriver entre les différentes couches du DOM.
+
+## Projet 5: Intégration API Avancée et Sécurité
+* **Gestion Dynamique des Tokens** : Automatisation de l'extraction des jetons (Tokens/Cookies) à partir des réponses de connexion pour autoriser les requêtes restreintes ultérieures.
+* **Résilience des Données** : Implémentation de la récupération dynamique d'identifiants (IDs) via **JsonPath**, garantissant la stabilité des tests en découvrant les ressources disponibles en temps réel.
+* **Sérialisation des Objets** : Utilisation de **Jackson Databind** pour une conversion fluide entre Java et JSON, assurant des structures de données de test propres et évolutives.
