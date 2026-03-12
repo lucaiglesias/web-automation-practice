@@ -25,6 +25,10 @@ This project demonstrates a professional automated testing suite for a web login
 * **Data Serialization**: Integrated **Jackson Databind** to automatically convert Java Maps into JSON payloads.
 * **Validation**: Applied BDD (Given/When/Then) structure to validate HTTP status codes and response bodies.
 
+## Project 4: Complex Elements (Heroku Dropdown menus; JavaScript Alerts; iFrames)
+* **Complex Elements**: Mastery of non-standard web components like **iFrames** (nested navigation), **JavaScript Alerts** (system pop-ups), and **Dropdowns** using the Selenium `Select` class.
+* **Context Switching**: Demonstrated ability to manage WebDriver focus between different DOM layers and system alerts.
+
 
 # Version Française
 Ce projet présente une suite de tests automatisés professionnels pour un flux de connexion web, en mettant l'accent sur la **réutilisabilité du code**, l'**architecture propre** et les **assertions automatisées**.
@@ -47,7 +51,11 @@ Ce projet présente une suite de tests automatisés professionnels pour un flux 
 * **Configuration avancée du navigateur** : Utilisation de ChromeOptions pour désactiver les alertes de sécurité du navigateur qui pourraient bloquer l'automatisation.
 * **Assertions robustes** : Validation de la correspondance entre les articles sélectionnés et les articles présents dans le panier.
 
-## Project 3: Test API (JSONPlaceholder)
+## Projet 3: Test API (JSONPlaceholder)
 * **Automatisation d'API** : Mise en œuvre de tests CRUD avec **RestAssured**.
 * **Sérialisation** : Utilisation de **Jackson** pour la conversion automatique des données Java en JSON.
 * **Validation**: Structure BDD pour valider les codes d'état et le contenu des réponses.
+
+## Projet 4: Éléments Complexes (Heroku Dropdown menus; JavaScript Alerts; iFrames)
+* **Éléments Complexes** : Maîtrise des composants web avancés tels que les **iFrames** (navigation imbriquée), les alertes **JavaScript** et les menus **Dropdown**.
+* **Changement de Contexte** : Capacité démontrée à gérer le focus du WebDriver entre les différentes couches du DOM.

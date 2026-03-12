@@ -65,7 +65,7 @@ public class EcommerceTest {
 
     @AfterEach
     public void tearDown() throws InterruptedException {
-        // 5. Pause of 3 secs and close browser
+        // Pause of 3 secs and close browser
         Thread.sleep(3000);
         driver.quit();
     }
