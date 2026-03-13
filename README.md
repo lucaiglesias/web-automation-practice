@@ -34,6 +34,11 @@ This project demonstrates a professional automated testing suite for a web login
 * **Data Resilience**: Implemented dynamic ID retrieval using **JsonPath**, ensuring tests remain stable by discovering available resources in real-time instead of relying on hardcoded values.
 * **Object Mapping**: Leveraged **Jackson Databind** for seamless Java-to-JSON serialization, maintaining clean and maintainable test data structures.
 
+## Project 6 - Part 1: Design Patterns - Page Object Model (POM) & Fluent Interface
+* **Decoupling**: Implemented **POM** to separate test scripts from UI locators, significantly reducing maintenance effort.
+* **Fluent Design**: Applied **Method Chaining** to create a Domain Specific Language (DSL) within the framework, making tests more intuitive and readable.
+* **Context Switching**: Automated the transition between page objects (e.g., LoginPage to InventoryPage) via return types, ensuring a seamless test flow.
+
 
 # Version Française
 Ce projet présente une suite de tests automatisés professionnels pour un flux de connexion web, en mettant l'accent sur la **réutilisabilité du code**, l'**architecture propre** et les **assertions automatisées**.
@@ -69,3 +74,8 @@ Ce projet présente une suite de tests automatisés professionnels pour un flux 
 * **Gestion Dynamique des Tokens** : Automatisation de l'extraction des jetons (Tokens/Cookies) à partir des réponses de connexion pour autoriser les requêtes restreintes ultérieures.
 * **Résilience des Données** : Implémentation de la récupération dynamique d'identifiants (IDs) via **JsonPath**, garantissant la stabilité des tests en découvrant les ressources disponibles en temps réel.
 * **Sérialisation des Objets** : Utilisation de **Jackson Databind** pour une conversion fluide entre Java et JSON, assurant des structures de données de test propres et évolutives.
+
+## Projet 6 - Partie 1 : Modèle d'Objet de Page (POM) et Interface Fluide
+* **Découplage** : Implémentation du **POM** pour séparer les scripts de test des localisateurs d'interface (UI), réduisant considérablement l'effort de maintenance.
+* **Conception Fluide** : Application du **Method Chaining** pour créer un langage spécifique au domaine (DSL) au sein du framework, rendant les tests plus intuitifs et lisíveis.
+* **Changement de Contexte** : Automatisation de la transition entre les objets de page (ex: de LoginPage à InventoryPage) via les types de retour, assurant un flux de test fluide.

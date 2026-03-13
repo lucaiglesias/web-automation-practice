@@ -63,6 +63,8 @@ public class EcommerceTest {
 
     }
 
+
+
     @AfterEach
     public void tearDown() throws InterruptedException {
         // Pause of 3 secs and close browser
