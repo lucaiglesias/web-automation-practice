@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TestPOM {
-    WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeEach
     // Setting browser and webpage before each test
@@ -58,6 +58,8 @@ public class TestPOM {
                 .clickButton();
 
         Assertions.assertTrue(inventory.isPageLoaded());
+        String productName1 = inventory.addItemCart(0);
+        Assertions.assertEquals("Sauce Labs Backpack", productName1);
 
     }
 

@@ -39,6 +39,10 @@ This project demonstrates a professional automated testing suite for a web login
 * **Fluent Design**: Applied **Method Chaining** to create a Domain Specific Language (DSL) within the framework, making tests more intuitive and readable.
 * **Context Switching**: Automated the transition between page objects (e.g., LoginPage to InventoryPage) via return types, ensuring a seamless test flow.
 
+## Project 6 - Part 2: Synchronization & Resilience (WebDriverWait)
+* **Explicit Waits**: Replaced brittle `Thread.sleep` with WebDriverWait, implementing intelligent synchronization based on element states (visibility, clickability, presence).
+* **Dynamic Content Handling**: Developed logic to interact with dynamic lists using **ExpectedConditions**, allowing the framework to wait for the DOM to be fully populated before execution.
+* **Separation of Concerns**: Maintained strict architectural boundaries by keeping element synchronization within Page Objects while keeping validation logic (Assertions) in the Test layer.
 
 # Version Française
 Ce projet présente une suite de tests automatisés professionnels pour un flux de connexion web, en mettant l'accent sur la **réutilisabilité du code**, l'**architecture propre** et les **assertions automatisées**.
@@ -79,3 +83,8 @@ Ce projet présente une suite de tests automatisés professionnels pour un flux 
 * **Découplage** : Implémentation du **POM** pour séparer les scripts de test des localisateurs d'interface (UI), réduisant considérablement l'effort de maintenance.
 * **Conception Fluide** : Application du **Method Chaining** pour créer un langage spécifique au domaine (DSL) au sein du framework, rendant les tests plus intuitifs et lisíveis.
 * **Changement de Contexte** : Automatisation de la transition entre les objets de page (ex: de LoginPage à InventoryPage) via les types de retour, assurant un flux de test fluide.
+
+## Projet 6 - Partie 2 : Synchronisation et résilience (WebDriverWait)
+* **Attentes Explicites** : Remplacement des `Thread.sleep` fragiles par WebDriverWait, implémentant une synchronisation intelligente basée sur l'état des éléments (visibilité, cliquabilité, présence).
+* **Gestion du Contenu Dynamique** : Développement d'une logique pour interagir com des listes dynamiques via **ExpectedConditions**, permettant au framework d'attendre que le DOM soit complètement chargé avant l'exécution.
+* **Séparation des Responsabilités** : Maintien de frontières architecturales strictes en gardant la synchronisation des éléments dans les Page Objects, tout en conservant la logique de validation (Assertions) dans la couche de Test.

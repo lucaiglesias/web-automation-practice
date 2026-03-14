@@ -2,9 +2,15 @@ package tests.DesignPatterns.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
     WebDriver driver;
+    WebDriverWait wait; //Time checker
 
     // Locators
     private By usernameField = By.id("user-name");
@@ -14,7 +20,9 @@ public class LoginPage {
     // Constructor
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
+
 
     /*
     //Simple methods for POM
@@ -54,7 +62,10 @@ public class LoginPage {
 
     //Method to click button and return new page
     public InventoryPage clickButton() {
-        driver.findElement(loginButton).click();
+        //Use 'wait' so that Selenium waits up to 10 seconds that the element appears on the page
+        //When it appears it moves to the following step.
+        WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
+        button.click();
         return new InventoryPage(driver);
     }
 
