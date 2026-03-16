@@ -16,6 +16,8 @@ public class InventoryPage {
     //Locators
     //private By shoppingCart = By.className("shopping_cart_link");
     private By titleProducts = By.className("title");
+    private By inventoryItem = By.className("inventory_item_name");
+    private By addButton = By.className("btn_inventory");
 
     //Constructor
     public InventoryPage(WebDriver driver){
@@ -37,8 +39,8 @@ public class InventoryPage {
         List<WebElement> items = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item")));
         String name = "";
         if (items.size() > 1){
-            name = items.get(index).findElement(By.className("inventory_item_name")).getText();
-            items.get(index).findElement(By.className("btn_inventory")).click();
+            name = items.get(index).findElement(inventoryItem).getText();
+            items.get(index).findElement(addButton).click();
         }
         else{
             System.out.println("Not enough products on the list");
