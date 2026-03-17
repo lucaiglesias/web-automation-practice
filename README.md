@@ -44,6 +44,11 @@ This project demonstrates a professional automated testing suite for a web login
 * **Dynamic Content Handling**: Developed logic to interact with dynamic lists using **ExpectedConditions**, allowing the framework to wait for the DOM to be fully populated before execution.
 * **Separation of Concerns**: Maintained strict architectural boundaries by keeping element synchronization within Page Objects while keeping validation logic (Assertions) in the Test layer.
 
+## Project 6 - Part 3: Data-Driven Testing (DDT)
+* **Massive Test Coverage**: Implemented **Data-Driven Testing** using JUnit 5 `@ParameterizedTest`, enabling the execution of multiple test scenarios (Standard, Locked-out, and Problem users) through a single test method.
+* **Separation of Concerns (Happy vs. Sad Path)**: Architected distinct test suites for successful flows and error validation, ensuring precise assertions and clearer reporting.
+* **Advanced Parsing**: Utilized custom CSV delimiters and quoting to handle complex string validation, such as multi-sentence error messages from the UI.
+
 # Version Française
 Ce projet présente une suite de tests automatisés professionnels pour un flux de connexion web, en mettant l'accent sur la **réutilisabilité du code**, l'**architecture propre** et les **assertions automatisées**.
 
@@ -88,3 +93,10 @@ Ce projet présente une suite de tests automatisés professionnels pour un flux 
 * **Attentes Explicites** : Remplacement des `Thread.sleep` fragiles par WebDriverWait, implémentant une synchronisation intelligente basée sur l'état des éléments (visibilité, cliquabilité, présence).
 * **Gestion du Contenu Dynamique** : Développement d'une logique pour interagir com des listes dynamiques via **ExpectedConditions**, permettant au framework d'attendre que le DOM soit complètement chargé avant l'exécution.
 * **Séparation des Responsabilités** : Maintien de frontières architecturales strictes en gardant la synchronisation des éléments dans les Page Objects, tout en conservant la logique de validation (Assertions) dans la couche de Test.
+
+## Projet 6 - Partie 3 : Data-Driven Testing (DDT)
+* **Couverture de Tests Massive** : Implémentation de **Tests Pilotés par les Données** (DDT) avec JUnit 5 `@ParameterizedTest`, permettant l'exécution de multiples scénarios (utilisateurs standards, bloqués ou problématiques) via une seule méthode de test.
+* **Séparation des Flux (Succès vs Échec)** : Architecture de suites de tests distinctes pour les flux réussis et la validation des erreurs, garantissant des assertions précises et des rapports plus clairs.
+* **Analyse Avancée (Parsing)** : Utilisation de délimiteurs CSV personnalisés pour gérer la validation de chaînes complexes, telles que les messages d'erreur multi-phrases de l'interface utilisateur.
+
+

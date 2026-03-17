@@ -16,6 +16,7 @@ public class LoginPage {
     private By usernameField = By.id("user-name");
     private By passwordField = By.id("password");
     private By loginButton = By.id("login-button");
+    private By errorMessage = By.className("error-message-container");
 
     // Constructor
     public LoginPage(WebDriver driver) {
@@ -67,6 +68,13 @@ public class LoginPage {
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
         button.click();
         return new InventoryPage(driver);
+    }
+
+    public String getErrorMessage(){
+        WebElement Message = wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage));
+        return Message.getText();
+
+
     }
 
 

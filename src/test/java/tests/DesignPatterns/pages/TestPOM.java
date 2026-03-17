@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -60,6 +62,42 @@ public class TestPOM {
         Assertions.assertTrue(inventory.isPageLoaded());
         String productName1 = inventory.addItemCart(0);
         Assertions.assertEquals("Sauce Labs Backpack", productName1);
+
+    }
+
+    //Testing multiple happy paths logins
+    @ParameterizedTest
+    //Argument source that reads comma-separated values (CSV)
+    @CsvSource({
+            "standard_user, secret_sauce",
+            "problem_user, secret_sauce",
+            "performance_glitch_user, secret_sauce"
+    })
+    public void happyPathLogin(String user, String password){
+        LoginPage loginPage = new LoginPage(driver);
+
+        InventoryPage inventory = loginPage.writeUser(user)
+                .writePassword(password)
+                .clickButton();
+
+        Assertions.assertTrue(inventory.isPageLoaded(), "Login failed for user: "+ user);
+
+    }
+
+    //Testing multiple sad paths logins
+    @ParameterizedTest
+    //Argument source that reads comma-separated values (CSV)
+    //Create a delimiter to avoid conflict with comma on sentence.
+    @CsvSource(delimiter = '|', value = {
+            "locked_out_user | secret_sauce | Epic sadface: Sorry, this user has been locked out.",
+            "wrong_user | wrong_password | Epic sadface: Username and password do not match any user in this service"
+    })
+    public void sadPathLogin(String user, String password, String errorMessage){
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.writeUser(user).writePassword(password).clickButton();
+
+        Assertions.assertEquals(errorMessage, loginPage.getErrorMessage());
 
     }
 
