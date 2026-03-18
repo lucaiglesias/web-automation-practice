@@ -49,6 +49,12 @@ This project demonstrates a professional automated testing suite for a web login
 * **Separation of Concerns (Happy vs. Sad Path)**: Architected distinct test suites for successful flows and error validation, ensuring precise assertions and clearer reporting.
 * **Advanced Parsing**: Utilized custom CSV delimiters and quoting to handle complex string validation, such as multi-sentence error messages from the UI.
 
+## Project 6 - Part 4: Professional Reporting (Allure Report)
+* **Interactive Dashboards**: Integrated **Allure Report** to transform raw JUnit results into a high-level executive dashboard, featuring success rate charts and execution timelines.
+* **Test Categorization**: Utilized Allure annotations (`@Feature`, `@Story`, `@Severity`) to organize tests by business functionality and impact, facilitating quick triage of failures.
+* **Traceability**: Each test execution includes detailed steps and metadata, providing full visibility into the automation lifecycle for both technical and non-technical stakeholders.
+* **Visual Insight**:![Allure Report Dashboard](docs/allure-dashboard.png)
+
 # Version Française
 Ce projet présente une suite de tests automatisés professionnels pour un flux de connexion web, en mettant l'accent sur la **réutilisabilité du code**, l'**architecture propre** et les **assertions automatisées**.
 
@@ -99,4 +105,9 @@ Ce projet présente une suite de tests automatisés professionnels pour un flux 
 * **Séparation des Flux (Succès vs Échec)** : Architecture de suites de tests distinctes pour les flux réussis et la validation des erreurs, garantissant des assertions précises et des rapports plus clairs.
 * **Analyse Avancée (Parsing)** : Utilisation de délimiteurs CSV personnalisés pour gérer la validation de chaînes complexes, telles que les messages d'erreur multi-phrases de l'interface utilisateur.
 
+## Projet 6 - Partie 4 : Rapports Professionnels (Allure Report)
+* **Tableaux de Bord Interactifs** : Intégration d'**Allure Report** pour transformer les résultats JUnit bruts en un tableau de bord exécutif, comprenant des graphiques de taux de réussite et des chronologies d'exécution.
+* **Catégorisation des Tests** : Utilisation des annotations Allure (`@Feature`, `@Story`, `@Severity`) pour organiser les tests par fonctionnalité métier et par impact, facilitant le triage rapide des échecs.
+* **Traçabilité** : Chaque exécution de test inclut des étapes détaillées et des métadonnées, offrant une visibilité complète sur le cycle de vie de l'automatisation pour les parties prenantes techniques et non techniques.
+* **Aperçu Visuel** : ![Allure Report Dashboard](docs/allure-dashboard.png)
 

@@ -1,5 +1,6 @@
 package tests.DesignPatterns.pages;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -52,6 +53,26 @@ public class TestPOM {
     //Test using POM with Fluent Interface
     @Test
     public void successLoginFluentInterface(){
+        LoginPage loginPage = new LoginPage(driver);
+
+        // Method clickButton() returns the new page.
+        InventoryPage inventory = loginPage.writeUser("standard_user")
+                .writePassword("secret_sauce")
+                .clickButton();
+
+        Assertions.assertTrue(inventory.isPageLoaded());
+        String productName1 = inventory.addItemCart(0);
+        Assertions.assertEquals("Sauce Labs Backpack", productName1);
+
+    }
+
+    //Same as previous test, but now with report by Allure
+    @Test
+    @Feature("Login")
+    @Story("Successful Login")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Check if regular user can access Inventory webpage using Fluent Interface")
+    public void successLoginFluentInterfaceWithAllure(){
         LoginPage loginPage = new LoginPage(driver);
 
         // Method clickButton() returns the new page.
