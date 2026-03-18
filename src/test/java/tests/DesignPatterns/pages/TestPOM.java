@@ -87,7 +87,7 @@ public class TestPOM {
     //Testing multiple sad paths logins
     @ParameterizedTest
     //Argument source that reads comma-separated values (CSV)
-    //Create a delimiter to avoid conflict with comma on sentence.
+    //Define a delimiter to avoid conflict with comma on sentence.
     @CsvSource(delimiter = '|', value = {
             "locked_out_user | secret_sauce | Epic sadface: Sorry, this user has been locked out.",
             "wrong_user | wrong_password | Epic sadface: Username and password do not match any user in this service"
