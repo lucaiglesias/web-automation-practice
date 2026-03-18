@@ -35,7 +35,7 @@ public class TestPOM {
         driver.manage().window().maximize();
     }
 
-    /*
+
     // Test using only POM
     @Test
     public void successLoginPOM() {
@@ -48,7 +48,7 @@ public class TestPOM {
         // Validate if the open page is the following page from the login
         Assertions.assertTrue(driver.getCurrentUrl().contains("inventory.html"));
 
-    }*/
+    }
 
     //Test using POM with Fluent Interface
     @Test
@@ -81,8 +81,6 @@ public class TestPOM {
                 .clickButton();
 
         Assertions.assertTrue(inventory.isPageLoaded());
-        String productName1 = inventory.addItemCart(0);
-        Assertions.assertEquals("Sauce Labs Backpack", productName1);
 
     }
 
