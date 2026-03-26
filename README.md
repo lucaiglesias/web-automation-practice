@@ -55,6 +55,11 @@ This project demonstrates a professional automated testing suite for a web login
 * **Traceability**: Each test execution includes detailed steps and metadata, providing full visibility into the automation lifecycle for both technical and non-technical stakeholders.
 * **Visual Insight**:![Allure Report Dashboard](docs/allure-dashboard.png)
 
+## Project 6 - Infrastructure & Base Architecture
+* **Inheritance & DRY**: Implemented a **BaseTest** class to centralize WebDriver initialization and teardown, ensuring all test classes follow a single source of truth.
+* **Global Hooks**: Centralized **JUnit 5 Extensions** (TestWatcher) to provide automated error screenshots across the entire suite without repeating code in individual test files.
+* **Driver Lifecycle Management**: Optimized the teardown process to resolve race conditions, ensuring screenshots are captured and attached to Allure before the browser session is terminated.
+
 # Version Française
 Ce projet présente une suite de tests automatisés professionnels pour un flux de connexion web, en mettant l'accent sur la **réutilisabilité du code**, l'**architecture propre** et les **assertions automatisées**.
 
@@ -111,3 +116,7 @@ Ce projet présente une suite de tests automatisés professionnels pour un flux 
 * **Traçabilité** : Chaque exécution de test inclut des étapes détaillées et des métadonnées, offrant une visibilité complète sur le cycle de vie de l'automatisation pour les parties prenantes techniques et non techniques.
 * **Aperçu Visuel** : ![Allure Report Dashboard](docs/allure-dashboard.png)
 
+## Projet 6 - Partie 5 : Infrastructure et Architecture de Base
+* **Héritage et DRY** : Implémentation d'une classe **BaseTest** pour centraliser l'initialisation et la fermeture du WebDriver, garantissant que toutes les classes de test suivent une source unique de vérité.
+* **Hooks Globaux** : Centralisation des **Extensions JUnit 5** (TestWatcher) pour fournir des captures d'écran automatiques en cas d'échec dans toute la suite, sans répéter le code.
+* **Gestion du Cycle de Vie** : Chaque exécution de test inclut des étapes détaillées et des métadonnées, offrant une visibilité complète sur le cycle de vie de l'automatisation pour les parties prenantes techniques et non techniques.

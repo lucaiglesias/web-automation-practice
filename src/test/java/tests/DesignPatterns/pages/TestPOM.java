@@ -1,40 +1,14 @@
 package tests.DesignPatterns.pages;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import tests.base.BaseTest;
 
-import java.util.HashMap;
-import java.util.Map;
 
-public class TestPOM {
-    protected WebDriver driver;
-
-    @BeforeEach
-    // Setting browser and webpage before each test
-    public void setup(){
-        //Options' object
-        ChromeOptions options = new ChromeOptions();
-        Map<String, Object> prefs = new HashMap<>();
-
-        // Disables save password and breach alerts from Chrome
-        prefs.put("credentials_enable_service", false);
-        prefs.put("profile.password_manager_enabled", false);
-        prefs.put("profile.password_manager_leak_detection", false);
-        options.setExperimentalOption("prefs", prefs);
-
-        driver = new ChromeDriver(options);
-        driver.get("https://www.saucedemo.com/");
-        driver.manage().window().maximize();
-    }
-
+public class TestPOM extends BaseTest {
 
     // Test using only POM
     @Test
@@ -84,6 +58,28 @@ public class TestPOM {
 
     }
 
+    //Same as previous test, but now with Fail
+    @Test
+    @Feature("Login")
+    @Story("Fail Login")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Check if regular user can access Inventory webpage using Fluent Interface")
+    public void failLoginToGetScreenshot(){
+        LoginPage loginPage = new LoginPage(driver);
+
+        // Method clickButton() returns the new page.
+        InventoryPage inventory = loginPage.writeUser("standard_user")
+                .writePassword("secret_sauce")
+                .clickButton();
+
+        Assertions.assertTrue(inventory.isPageLoaded());
+
+        String productName = inventory.addItemCart(0);
+        //Error on purpose
+        Assertions.assertEquals("Red T-Shirt", productName, "Product incorrect");
+
+    }
+
     //Testing multiple happy paths logins
     @ParameterizedTest
     //Argument source that reads comma-separated values (CSV)
@@ -120,10 +116,4 @@ public class TestPOM {
 
     }
 
-    @AfterEach
-    public void tearDown() throws InterruptedException {
-        // Pause of 3 secs and close browser
-        Thread.sleep(3000);
-        driver.quit();
-    }
 }
